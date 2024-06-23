@@ -64,3 +64,17 @@ in line 3 (right above the following set( LRS_TARGET realsense2 ))
 ```
 python3 realDetect.py # this starts the script and writes all labels it finds the confidence it has and the distance in cm to a detections.#txt file
 ```
+
+## Docker
+
+To build the docker image, run the following command in the root directory of the project:
+
+```
+docker build -t your_image_name .
+```
+
+To run the docker image, run the following command:
+
+```
+docker run --device /dev/video0:/dev/video0 -it your_image_name -e DISPLAY=$DISPLAY -v /tmp/.X11-unix:/tmp/.X11-unix
+```
